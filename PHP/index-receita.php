@@ -26,7 +26,7 @@ $receitas = $stmt->fetchAll(PDO::FETCH_ASSOC);
     </header>
 
     <main>
-        <h2>Lista de Receitas</h2>
+        <h2>Lista de Receita</h2>
         <table>
             <thead>
             <tr>
