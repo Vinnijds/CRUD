@@ -8,7 +8,7 @@
 </head>
 <body>
     <header>
-        <h1>Caderno de Receitas</h1>
+        <h1>Menu de Receitas</h1>
         <nav>
             <ul>
                 <li><a href="index.php">Inicio</a></li>

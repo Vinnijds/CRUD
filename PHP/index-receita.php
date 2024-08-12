@@ -27,6 +27,9 @@ $receitas = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     <main>
         <h2>Lista de Receita</h2>
+
+        <input type="text" id="searchInput" placeholder="Buscar Receitas" />
+
         <table>
             <thead>
             <tr>
@@ -48,7 +51,7 @@ $receitas = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         <td><?= $receita['tempo_preparo'] ?></td>
                         <td>
                             <a href="update-receita.php?id=<?= $receita['id'] ?>">Editar</a>
-                            <a href="delete-receita.php?id=<?= $receita['id'] ?>">Excluir</a>
+                            <a href="delete-receita.php?id=<?= $receita['id'] ?>" class="delete-link">Excluir</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>
@@ -59,5 +62,41 @@ $receitas = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <footer>
         <p>&copy; Mang0 Labs</p>
     </footer>
+
+    <script>
+        document.getElementById('searchInput').addEventListener('input', function() {
+        let searchTerm = this.value.toLowerCase();
+        let rows = document.querySelectorAll('tbody tr');
+
+        rows.forEach(function(row) {
+            let recipeName = row.querySelector('td:nth-child(2)').textContent.toLowerCase();
+            
+            if (recipeName.includes(searchTerm)) {
+                row.style.display = '';
+            } else {
+                row.style.display = 'none';
+            }
+        });
+    });
+
+    // Seleciona todos os links de exclusão
+    const deleteLinks = document.querySelectorAll('.delete-link');
+
+    // Adiciona um event listener para cada link de exclusão
+    deleteLinks.forEach(link => {
+        link.addEventListener('click', function(event) {
+            event.preventDefault(); // Previne a navegação imediata
+
+            const userConfirmed = confirm("Você tem certeza que deseja excluir esta receita?");
+
+            if (userConfirmed) {
+                // Se o usuário confirmou, redireciona para o link de exclusão
+                window.location.href = this.href;
+            }
+        });
+    });
+
+    </script>
+
 </body>
 </html>

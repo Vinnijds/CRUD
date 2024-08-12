@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 <body>
     <header>
-        <h1>Caderno de Receitas</h1>
+        <h1>Menu de Receitas</h1>
         <nav>
             <ul>
                 <li><a href="../index.php">Inicio</a></li>
@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <form method="POST">
             <label for="nome">Nome:</label>
             <input type="text" id="nome" name="nome" required>
-            <label for="ingredientes">Ingredientes</label>
+            <label for="ingredientes">Ingredientes:</label>
             <input type="text" id="ingredientes" name="ingredientes" required>
             <label for="modo_preparo">Modo de Preparo:</label>
             <input type="text" id="modo_preparo" name="modo_preparo" required>

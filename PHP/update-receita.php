@@ -55,5 +55,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <footer>
         <p>&copy; Mang0 Labs</p>
     </footer>
+    
+    </script>
+
 </body>
 </html>

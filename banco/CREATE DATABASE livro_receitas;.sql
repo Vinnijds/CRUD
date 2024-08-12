@@ -10,3 +10,4 @@ CREATE TABLE receitas (
     modo_preparo VARCHAR(255) NOT NULL,
     tempo_preparo TIME() NOT NULL
 );
+

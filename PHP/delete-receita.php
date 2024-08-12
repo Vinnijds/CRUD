@@ -6,3 +6,5 @@ $stmt = $pdo->prepare("DELETE FROM receitas WHERE id = ?");
 $stmt->execute([$id]);
 header('Location: index-receita.php');
 ?>
+
+<!--
